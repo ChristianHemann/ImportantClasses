@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,15 +41,19 @@
   <ItemGroup>
     <Compile Include="Attributes\AttributedObject.cs" />
     <Compile Include="Attributes\AttributeFinder.cs" />
-    <Compile Include="Attributes\SettingAttribute.cs" />
-    <Compile Include="Attributes\SettingEntryPointAttribute.cs" />
-    <Compile Include="Attributes\SettingMenuItemAttribute.cs" />
+    <Compile Include="Exceptions\KeyNotFoundException.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Settings\SettingAttribute.cs" />
+    <Compile Include="Settings\SettingEntryPointAttribute.cs" />
+    <Compile Include="Settings\SettingItem.cs" />
+    <Compile Include="Settings\SettingMenuItemAttribute.cs" />
     <Compile Include="Enums\MessageCode.cs" />
+    <Compile Include="Settings\StaticModifierException.cs" />
     <Compile Include="Exceptions\TypeException.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Settings.cs" />
+    <Compile Include="Settings\Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

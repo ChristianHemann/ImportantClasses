@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace ImportantClasses.Attributes
+namespace ImportantClasses.Settings
 {
     /// <summary>
-    /// Attribute to make a field or property shown in the menu as a setting. The object must be public to be found.
-    /// The fields or properties parent object must have a SettingEntryPointAttribute or SettingMenuItemAttribute.
+    /// Attribute to mark a field or property as a setting. 
+    /// The object must be public to be found.
+    /// The field or propertie must be static or its parent object must have a SettingEntryPointAttribute or SettingMenuItemAttribute.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     public class SettingAttribute : Attribute
