@@ -43,6 +43,10 @@
     <Compile Include="Attributes\AttributeFinder.cs" />
     <Compile Include="Exceptions\KeyNotFoundException.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Math\DimensionMismatchException.cs" />
+    <Compile Include="Math\Vector.cs" />
+    <Compile Include="Math\Vector2.cs" />
+    <Compile Include="Math\Vector3.cs" />
     <Compile Include="Settings\SettingAttribute.cs" />
     <Compile Include="Settings\SettingEntryPointAttribute.cs" />
     <Compile Include="Settings\SettingItem.cs" />

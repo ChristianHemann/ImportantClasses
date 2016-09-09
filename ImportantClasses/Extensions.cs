@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ImportantClasses.Math;
 
 namespace ImportantClasses
 {
@@ -25,6 +26,41 @@ namespace ImportantClasses
             }
             while (enumerator1.MoveNext() && enumerator2.MoveNext());
             return true;
+        }
+
+        /// <summary>
+        /// creates a new vector based on the values of an array
+        /// </summary>
+        /// <param name="values">the values of the vector</param>
+        /// <returns>the new vector</returns>
+        public static Vector ToVector(this double[] values)
+        {
+            return new Vector(values);
+        }
+
+        /// <summary>
+        /// creates a new vector based on the values of an array
+        /// </summary>
+        /// <param name="values">the values of the vector</param>
+        /// <returns>the new vector</returns>
+        public static Vector ToVector(this float[] values)
+        {
+            return new Vector(values.ToDoubleArray());
+        }
+
+        /// <summary>
+        /// converts a float-array into a double-array
+        /// </summary>
+        /// <param name="arr">the array to convert</param>
+        /// <returns>the generated array</returns>
+        public static double[] ToDoubleArray(this float[] arr)
+        {
+            double[] buffer = new double[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                buffer[i] = arr[i];
+            }
+            return buffer;
         }
     }
 }

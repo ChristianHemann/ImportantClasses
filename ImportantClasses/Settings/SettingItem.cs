@@ -26,7 +26,7 @@ namespace ImportantClasses.Settings
             set
             {
                 _changedValue = value;
-                Settings.ChangeSettingTemporary(PathName, value);
+                Settings.ChangeSettingTemporary(PathName.ToArray(), value);
             }
         }
 
