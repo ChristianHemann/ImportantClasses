@@ -1,4 +1,5 @@
-﻿using ImportantClasses.Enums;
+﻿using System.Diagnostics;
+using ImportantClasses.Enums;
 
 namespace ImportantClasses
 {
@@ -21,7 +22,6 @@ namespace ImportantClasses
         /// </summary>
         /// <param name="text">the text of the message</param>
         /// <param name="code">how the message is classificated</param>
-        /// <param name="sendMessage">if true the NewMessage Event will be invoked after creating the message</param>
         public Message(string text, MessageCode code = MessageCode.Notification)
         {
             MessageText = text;
@@ -35,8 +35,10 @@ namespace ImportantClasses
         /// <param name="message">the message to send</param>
         public static void SendMessage(object sender, Message message)
         {
-            if (NewMessage != null)
-                NewMessage(sender, message);
+            NewMessage?.Invoke(sender, message);
+#if DEBUG
+            Debug.Print(message.MessageCode.ToString() + ": "+message.MessageText);
+#endif
         }
 
         /// <summary>
@@ -45,7 +47,7 @@ namespace ImportantClasses
         /// <param name="sender">the sender of the message. In most cases its 'this'"</param>
         /// <param name="messageText">the text of the message</param>
         /// <param name="code">how the message if classified</param>
-        public static void sendMessage(object sender, string messageText, MessageCode code = MessageCode.Notification)
+        public static void SendMessage(object sender, string messageText, MessageCode code = MessageCode.Notification)
         {
             SendMessage(sender, new Message(messageText, code));
         }

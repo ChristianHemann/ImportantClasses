@@ -121,7 +121,7 @@ namespace ImportantClasses.Attributes
         /// <param name="parent">the parent object </param>
         /// <param name="includeInheritedAttributes">shall the types which inherits from the attributeType be included?</param>
         /// <returns>All child objects of the parent object which has the specified attribute</returns>
-        public static IEnumerable<AttributedObject<object>> FindAttributes(this object parent, Type attributeType, bool includeInheritedAttributes = false)
+        public static IEnumerable<AttributedObject<object>> FindAttributedChildren(this object parent, Type attributeType, bool includeInheritedAttributes = false)
         {
             if(parent == null)
                 return new AttributedObject<object>[0];

@@ -47,12 +47,10 @@
     <Compile Include="Math\Vector.cs" />
     <Compile Include="Math\Vector2.cs" />
     <Compile Include="Math\Vector3.cs" />
+    <Compile Include="Settings\ContainSettingsAttribute.cs" />
     <Compile Include="Settings\SettingAttribute.cs" />
-    <Compile Include="Settings\SettingEntryPointAttribute.cs" />
     <Compile Include="Settings\SettingItem.cs" />
-    <Compile Include="Settings\SettingMenuItemAttribute.cs" />
     <Compile Include="Enums\MessageCode.cs" />
-    <Compile Include="Settings\StaticModifierException.cs" />
     <Compile Include="Exceptions\TypeException.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Message.cs" />

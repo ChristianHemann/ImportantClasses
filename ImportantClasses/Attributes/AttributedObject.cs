@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using ImportantClasses.Enums;
 using ImportantClasses.Exceptions;
 
 namespace ImportantClasses.Attributes
@@ -65,13 +66,14 @@ namespace ImportantClasses.Attributes
             {
                 if (IsStatic)
                 {
-                    Message.sendMessage(this, 
+                    Message.SendMessage(this, 
                         "The Parent of the AttributedObject cannot be set for a static object at " +
-                        Environment.StackTrace);
+                        Environment.StackTrace, MessageCode.Error);
                     return;
                 }
                 if (value.GetType() != ParentType)
                 {
+                    Message.SendMessage(this, "The Type of the set object does not match the Type of the origin object",MessageCode.FatalError);
                     throw new TypeException("The Type of the set object does not match the Type of the origin object");
                 }
 
