@@ -1,11 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportantClasses", "ImportantClasses\ImportantClasses.csproj", "{07D88104-6448-4E62-B7DF-501C90DAE8B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{B426E151-B6BC-4929-A5C2-2BA3B4E12F20}"
+	ProjectSection(ProjectDependencies) = postProject
+		{07D88104-6448-4E62-B7DF-501C90DAE8B9} = {07D88104-6448-4E62-B7DF-501C90DAE8B9}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,7 +9,7 @@ namespace ImportantClasses.Attributes
     /// provides a simple access to an object with its attribute
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class AttributedObject<T>
+    public class AttributedObject
     {
         private enum InfoType
         {
@@ -24,29 +24,29 @@ namespace ImportantClasses.Attributes
         /// <summary>
         /// the value of the object
         /// </summary>
-        public T Value
+        public object Value
         {
             get
             {
                 if (_infoType == InfoType.FieldInfo)
                 {
-                    return (T)_parent.GetType().GetField(ObjectName).GetValue(_parent);
+                    return ParentType.GetField(ObjectName).GetValue(_parent);
                 }
                 else if (_infoType == InfoType.PropertyInfo)
                 {
-                    return (T)_parent.GetType().GetProperty(ObjectName).GetValue(_parent, null);
+                    return ParentType.GetProperty(ObjectName).GetValue(_parent, null);
                 }
-                return default(T);
+                return null;
             }
             set
             {
                 if (_infoType == InfoType.FieldInfo)
                 {
-                    _parent.GetType().GetField(ObjectName).SetValue(_parent, value);
+                    ParentType.GetField(ObjectName).SetValue(_parent, value);
                 }
                 else if (_infoType == InfoType.PropertyInfo)
                 {
-                    _parent.GetType().GetProperty(ObjectName).SetValue(_parent, value, null);
+                    ParentType.GetProperty(ObjectName).SetValue(_parent, value, null);
                 }
             }
         }
